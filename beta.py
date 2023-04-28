@@ -68,7 +68,7 @@ def random_chain_generation(n, values, limit=1000, mult_attempt=10):
     while True:
         v = np.random.choice(values, n, possibilities)
         b = B.beta(v)
-        if np.isfinite(b) and b not in y:
+        if b == b and np.isfinite(b) and b not in y:
             X.append(list(v))
             y.append(b)
             accept_counter += 1
